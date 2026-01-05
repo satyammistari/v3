@@ -91,29 +91,29 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap gap-2"
           >
-            <TechLogoIcon 
-              name="PyTorch" 
-              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" 
+            <TechLogoIcon
+              name="PyTorch"
+              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
             />
-            <TechLogoIcon 
-              name="TensorFlow" 
-              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" 
+            <TechLogoIcon
+              name="TensorFlow"
+              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
             />
-            <TechLogoIcon 
-              name="Hugging Face" 
-              logo="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+            <TechLogoIcon
+              name="Hugging Face"
+              logo="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
             />
-            <TechLogoIcon 
-              name="OpenCV" 
-              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" 
+            <TechLogoIcon
+              name="OpenCV"
+              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg"
             />
-            <TechLogoIcon 
-              name="AWS" 
-              logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" 
+            <TechLogoIcon
+              name="AWS"
+              logo="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg"
             />
-            <TechLogoIcon 
-              name="Docker" 
-              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" 
+            <TechLogoIcon
+              name="Docker"
+              logo="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
             />
           </motion.div>
 
@@ -181,10 +181,7 @@ export function HeroSection() {
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
           <PixelCat />
         </div>
-        <SpotifyWidget 
-          song="Gal Sun"
-          artist="Sabat Batin, Rockstar"
-        />
+        <SpotifyWidget />
       </motion.div>
     </section>
   );

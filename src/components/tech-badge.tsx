@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Icons } from "@/components/icons";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 interface TechBadgeProps {
   name: string;
@@ -27,31 +27,31 @@ const techIcons: Record<string, React.ReactNode> = {
   "HUGGINGFACE": <Icons.huggingface className="w-3.5 h-3.5" />,
 
   // AI/ML Libraries
-  "OpenCV": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" className="w-3.5 h-3.5" alt="OpenCV" />,
-  "OPENCV": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" className="w-3.5 h-3.5" alt="OpenCV" />,
+  "OpenCV": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="OpenCV" />,
+  "OPENCV": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="OpenCV" />,
 
   // Cloud Providers
-  "AWS": <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" className="w-3.5 h-3.5" alt="AWS" />,
-  "Azure": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" className="w-3.5 h-3.5" alt="Azure" />,
-  "GCP": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" className="w-3.5 h-3.5" alt="GCP" />,
-  "Cloudflare": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" className="w-3.5 h-3.5" alt="Cloudflare" />,
+  "AWS": <Image src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" width={14} height={14} className="w-3.5 h-3.5" alt="AWS" />,
+  "Azure": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Azure" />,
+  "GCP": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="GCP" />,
+  "Cloudflare": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Cloudflare" />,
 
   // DevOps & Deployment
-  "Docker": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" className="w-3.5 h-3.5" alt="Docker" />,
-  "Kubernetes": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" className="w-3.5 h-3.5" alt="Kubernetes" />,
-  "Vercel": <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" className="w-3.5 h-3.5" alt="Vercel" />,
+  "Docker": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Docker" />,
+  "Kubernetes": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Kubernetes" />,
+  "Vercel": <Image src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" width={14} height={14} className="w-3.5 h-3.5" alt="Vercel" />,
 
   // Big Data
-  "Apache Spark": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" className="w-3.5 h-3.5" alt="Apache Spark" />,
-  "Spark": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" className="w-3.5 h-3.5" alt="Spark" />,
-  "Hadoop": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" className="w-3.5 h-3.5" alt="Hadoop" />,
-  "Kafka": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" className="w-3.5 h-3.5" alt="Kafka" />,
+  "Apache Spark": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Apache Spark" />,
+  "Spark": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Spark" />,
+  "Hadoop": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Hadoop" />,
+  "Kafka": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Kafka" />,
 
   // Databases
   "PostgreSQL": <Icons.postgresql className="w-3.5 h-3.5" />,
   "MongoDB": <Icons.mongodb className="w-3.5 h-3.5" />,
-  "Firebase": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" className="w-3.5 h-3.5" alt="Firebase" />,
-  "Redis": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" className="w-3.5 h-3.5" alt="Redis" />,
+  "Firebase": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Firebase" />,
+  "Redis": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Redis" />,
 
   // Web Development
   "React": <Icons.react className="w-3.5 h-3.5" />,
@@ -65,8 +65,8 @@ const techIcons: Record<string, React.ReactNode> = {
   "N": <Icons.nextjs className="w-3.5 h-3.5" />,
   "Prisma": <Icons.prisma className="w-3.5 h-3.5" />,
   "Tailwind CSS": <Icons.tailwindcss className="w-3.5 h-3.5" />,
-  "Flask": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" className="w-3.5 h-3.5" alt="Flask" />,
-  "FLASK": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" className="w-3.5 h-3.5" alt="Flask" />,
+  "Flask": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Flask" />,
+  "FLASK": <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" width={14} height={14} className="w-3.5 h-3.5" alt="Flask" />,
 };
 
 export function TechBadge({ name, icon }: TechBadgeProps) {

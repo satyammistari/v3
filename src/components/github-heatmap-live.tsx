@@ -1,9 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { PixelCat } from "@/components/pixel-cat";
+import Image from "next/image";
 
 interface GitHubHeatmapProps {
   username?: string;
@@ -38,11 +38,14 @@ export function GitHubHeatmap({ username = "satyammistari" }: GitHubHeatmapProps
 
         <div className="w-full overflow-x-auto">
           <div className="min-w-[700px]">
-            <img
+            <Image
               src={`https://ghchart.rshah.org/${theme === 'dark' ? '' : '2d3748/'}${username}`}
               alt="GitHub Contribution Chart"
-              className="w-full"
+              width={800}
+              height={128}
+              className="w-full h-auto"
               style={{ imageRendering: 'crisp-edges' }}
+              unoptimized
             />
           </div>
         </div>

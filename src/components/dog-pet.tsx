@@ -17,7 +17,7 @@ export function DogPet() {
   const inactivityTimer = useRef<NodeJS.Timeout>();
   const lastMovementTime = useRef<number>(Date.now());
   const lastPetPos = useRef({ x: 0, y: 0 });
-  
+
   // Mouse position tracking with MotionValues
   const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
   const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
@@ -30,11 +30,11 @@ export function DogPet() {
   // Calculate velocity for rotation effect
   const petVelocityX = useVelocity(petX);
   const petVelocityY = useVelocity(petY);
-  
+
   // Rotation based on velocity (leaning forward when running)
   const petRotation = useTransform(
     [petVelocityX, petVelocityY],
-    ([vx, vy]) => {
+    ([vx, vy]: number[]) => {
       const velocity = Math.sqrt(vx * vx + vy * vy);
       const maxRotation = 8;
       const rotation = Math.min((velocity / 100) * maxRotation, maxRotation);
@@ -52,15 +52,15 @@ export function DogPet() {
     if (!mounted) return;
 
     let rafId: number;
-    
+
     const updatePetState = () => {
       const petCurrentX = petX.get();
       const petCurrentY = petY.get();
       const targetX = mouseX.get();
       const targetY = mouseY.get();
-      
+
       const distance = calculateDistance(petCurrentX, petCurrentY, targetX, targetY);
-      
+
       // Update facing direction based on pet's position relative to target
       const deltaX = targetX - petCurrentX;
       if (Math.abs(deltaX) > 5) {
@@ -143,14 +143,14 @@ export function DogPet() {
       const handleElementHover = (e: Event) => {
         const element = e.currentTarget as HTMLElement;
         const rect = element.getBoundingClientRect();
-        
+
         // Snap to top center of element
         const perchX = rect.left + rect.width / 2 - 24;
         const perchY = rect.top - 50;
 
         setIsPerched(true);
         setPetState("running");
-        
+
         // Snap target position (spring will create smooth glide)
         mouseX.set(perchX);
         mouseY.set(perchY);
@@ -167,7 +167,7 @@ export function DogPet() {
         // Only unperch if mouse actually left the card
         const element = e.currentTarget as HTMLElement;
         const relatedTarget = (e as MouseEvent).relatedTarget as HTMLElement;
-        
+
         if (!element.contains(relatedTarget)) {
           setIsPerched(false);
           setPetState("running");
@@ -213,16 +213,16 @@ export function DogPet() {
       }}
       className="pointer-events-none z-[9998] will-change-transform select-none"
       initial={{ opacity: 0, scale: 0 }}
-      animate={{ 
+      animate={{
         opacity: 1,
         scale: petState === "sitting" ? 0.9 : 1,
       }}
-      transition={{ 
+      transition={{
         opacity: { duration: 0.6, ease: "easeOut" },
         scale: { type: "spring", stiffness: 200, damping: 15 }
       }}
     >
-      <motion.div 
+      <motion.div
         className="relative w-20 h-20"
         style={{
           filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3))",

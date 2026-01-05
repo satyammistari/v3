@@ -59,6 +59,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'www.kaggle.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'ghchart.rshah.org',
+      },
     ],
   },
 };
