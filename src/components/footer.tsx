@@ -27,7 +27,7 @@ export function Footer() {
         {/* Quote Section */}
         <div className="bg-[#0c0c0c] dark:bg-[#0c0c0c] light:bg-white rounded-lg p-8 md:p-12 border border-white/10 dark:border-white/10 light:border-zinc-200 relative overflow-hidden light:shadow-lg">
           <div className="absolute top-0 left-0 text-9xl md:text-[12rem] font-serif text-white/5 dark:text-white/5 light:text-zinc-200 leading-none">
-            "
+            &quot;
           </div>
           <blockquote className="relative z-10 text-xl md:text-2xl font-medium text-white/90 dark:text-white/90 light:text-zinc-900 italic max-w-3xl pl-8">
             {quote.text}

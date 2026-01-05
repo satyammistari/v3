@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { Icons } from "@/components/icons";
@@ -12,7 +13,7 @@ const techIcons: Record<string, React.ReactNode> = {
   // Core Languages
   "Python": <Icons.python className="w-3.5 h-3.5" />,
   "PYTHON": <Icons.python className="w-3.5 h-3.5" />,
-  
+
   // AI/ML/DL Frameworks
   "PyTorch": <Icons.pytorch className="w-3.5 h-3.5" />,
   "PYTORCH": <Icons.pytorch className="w-3.5 h-3.5" />,
@@ -24,34 +25,34 @@ const techIcons: Record<string, React.ReactNode> = {
   "Hugging Face": <Icons.huggingface className="w-3.5 h-3.5" />,
   "HuggingFace": <Icons.huggingface className="w-3.5 h-3.5" />,
   "HUGGINGFACE": <Icons.huggingface className="w-3.5 h-3.5" />,
-  
+
   // AI/ML Libraries
   "OpenCV": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" className="w-3.5 h-3.5" alt="OpenCV" />,
   "OPENCV": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" className="w-3.5 h-3.5" alt="OpenCV" />,
-  
+
   // Cloud Providers
   "AWS": <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" className="w-3.5 h-3.5" alt="AWS" />,
   "Azure": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" className="w-3.5 h-3.5" alt="Azure" />,
   "GCP": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" className="w-3.5 h-3.5" alt="GCP" />,
   "Cloudflare": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" className="w-3.5 h-3.5" alt="Cloudflare" />,
-  
+
   // DevOps & Deployment
   "Docker": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" className="w-3.5 h-3.5" alt="Docker" />,
   "Kubernetes": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" className="w-3.5 h-3.5" alt="Kubernetes" />,
   "Vercel": <img src="https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png" className="w-3.5 h-3.5" alt="Vercel" />,
-  
+
   // Big Data
   "Apache Spark": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" className="w-3.5 h-3.5" alt="Apache Spark" />,
   "Spark": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg" className="w-3.5 h-3.5" alt="Spark" />,
   "Hadoop": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg" className="w-3.5 h-3.5" alt="Hadoop" />,
   "Kafka": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" className="w-3.5 h-3.5" alt="Kafka" />,
-  
+
   // Databases
   "PostgreSQL": <Icons.postgresql className="w-3.5 h-3.5" />,
   "MongoDB": <Icons.mongodb className="w-3.5 h-3.5" />,
   "Firebase": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" className="w-3.5 h-3.5" alt="Firebase" />,
   "Redis": <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" className="w-3.5 h-3.5" alt="Redis" />,
-  
+
   // Web Development
   "React": <Icons.react className="w-3.5 h-3.5" />,
   "Bun": <Icons.bun className="w-3.5 h-3.5" />,

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -28,16 +29,16 @@ export function GitHubHeatmap({ username = "satyammistari" }: GitHubHeatmapProps
       <div className="absolute -top-3 -right-3 z-10">
         <PixelCat />
       </div>
-      
+
       <div className="space-y-4">
         <div>
           <p className="text-xs text-zinc-500 dark:text-zinc-500 light:text-zinc-400 uppercase tracking-widest mb-1">Featured</p>
           <h3 className="text-4xl md:text-5xl font-bold text-white dark:text-white light:text-zinc-900 tracking-tighter">GitHub Activity</h3>
         </div>
-        
+
         <div className="w-full overflow-x-auto">
           <div className="min-w-[700px]">
-            <img 
+            <img
               src={`https://ghchart.rshah.org/${theme === 'dark' ? '' : '2d3748/'}${username}`}
               alt="GitHub Contribution Chart"
               className="w-full"
