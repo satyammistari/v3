@@ -6,6 +6,7 @@ import { BlogCard } from "@/components/blog-card";
 interface MediumPost {
   title: string;
   link: string;
+  slug: string;
   pubDate: string;
   description: string;
   image: string;
@@ -53,26 +54,19 @@ export function MediumBlogCard() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {posts.slice(0, 4).map((post) => (
-        <a
+        <BlogCard
           key={post.link}
-          href={post.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block"
-        >
-          <BlogCard
-            title={post.title}
-            description={post.description}
-            date={new Date(post.pubDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-            image={post.image || "/placeholder.png"}
-            tags={post.categories.slice(0, 2)}
-            slug={post.link}
-          />
-        </a>
+          title={post.title}
+          description={post.description}
+          date={new Date(post.pubDate).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+          image={post.image || "/placeholder.png"}
+          tags={post.categories.slice(0, 2)}
+          slug={post.slug || post.link} // Fallback to link if slug is missing (shouldn't happen with API update)
+        />
       ))}
     </div>
   );

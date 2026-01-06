@@ -24,8 +24,15 @@ export async function GET() {
     const xmlData = await response.text();
     const result: any = await parseXML(xmlData);
 
+    // Debug log to check structure
+    // console.log("Medium API: Parsed XML structure keys:", Object.keys(result || {}));
+    if (result?.rss?.channel) {
+      // console.log("Medium API: RSS Channel keys:", Object.keys(result.rss.channel[0]));
+    }
+
     if (!result?.rss?.channel?.[0]?.item) {
-      console.error('Invalid RSS structure:', result);
+      console.error('Invalid RSS structure. Result keys:', Object.keys(result || {}));
+      console.log('Full result snippet:', JSON.stringify(result).substring(0, 200));
       return NextResponse.json({ posts: [] });
     }
 
@@ -38,8 +45,15 @@ export async function GET() {
       // Clean description
       const description = item.description?.[0]?.replace(/<[^>]*>/g, '').substring(0, 150) + '...' || '';
 
+      // Generate slug from title
+      const slug = item.title[0]
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+
       return {
         title: item.title[0],
+        slug,
         link: item.link[0],
         pubDate: item.pubDate[0],
         description,

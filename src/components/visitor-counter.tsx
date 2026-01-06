@@ -34,14 +34,18 @@ export function VisitorCounter() {
 
   return (
     <div className="flex justify-center">
-      <div className="bg-[#0c0c0c] dark:bg-[#0c0c0c] rounded-full px-6 py-3 border border-white/10 dark:border-white/10 flex items-center space-x-3">
-        <Eye className="w-4 h-4 text-white/60 dark:text-white/60" />
-        <span className="text-sm text-white/80 dark:text-white/80">
-          You are the{" "}
-          <span className="font-bold text-white dark:text-white">
+      <div className="bg-[#111111] light:bg-zinc-100 rounded-full px-4 py-1.5 border border-zinc-800 light:border-zinc-300 flex items-center gap-2 shadow-sm">
+        {/* Green Glowing Dot */}
+        <div className="relative flex items-center justify-center w-2 h-2">
+          <div className="absolute w-2 h-2 bg-green-500 rounded-full animate-ping opacity-75"></div>
+          <div className="relative w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+        </div>
+
+        <span className="text-xs text-zinc-400 light:text-zinc-600 font-medium" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          Visitor #
+          <span className="text-zinc-100 light:text-zinc-900 ml-1">
             {loading ? "..." : (count || 25784).toLocaleString()}
           </span>
-          th visitor.
         </span>
       </div>
     </div>
