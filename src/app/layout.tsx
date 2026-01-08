@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Newsreader } from "next/font/google";
 import { DogPet } from "@/components/dog-pet";
 import "./globals.css";
 
@@ -12,6 +12,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
   display: "swap",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  display: "swap",
+  style: "italic",
 });
 
 export const metadata: Metadata = {
@@ -56,11 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={jetbrainsMono.className}>
+    <html lang="en" suppressHydrationWarning className={`${jetbrainsMono.className} ${newsreader.variable}`}>
       <body
         className={cn(
           "min-h-screen bg-[#000000] antialiased text-sm",
-          jetbrainsMono.variable
+          jetbrainsMono.variable,
+          newsreader.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">

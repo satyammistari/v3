@@ -63,6 +63,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'ghchart.rshah.org',
       },
+      {
+        protocol: 'https',
+        hostname: 'wbnzpajtrlgaoulcfrlv.supabase.co',
+      },
     ],
   },
 };

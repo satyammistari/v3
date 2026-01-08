@@ -117,7 +117,7 @@ export default async function Page() {
                   { name: "scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
                 ]}
               />
-              
+
               <ExperienceCard
                 logoUrl="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
                 altText="Hugging Face"
@@ -143,7 +143,7 @@ export default async function Page() {
         <section id="work">
           <SectionsWrapper className="space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Experience</h2>
-            
+
             {/* Current Role (First item - highlighted) */}
             {DATA.work.length > 0 && (
               <div className="space-y-4 pb-6 border-b border-white/10">
@@ -290,28 +290,15 @@ export default async function Page() {
                   href="/movies"
                   showCat
                 />
+                <BentoCard
+                  icon={<Eye className="w-5 h-5 text-white/80" />}
+                  title="Wall of Vouches"
+                  description="Kind words and shitposts from friends."
+                  href="/vouches"
+                  showCat
+                />
               </div>
             </SectionsWrapper>
-          </div>
-        </section>
-
-        {/* Quote & Visitor Counter */}
-        <section className="pt-12 border-t border-white/10">
-          <div className="text-center space-y-4">
-            <p className="text-xs text-white/50 italic max-w-2xl mx-auto leading-relaxed">
-              &quot;You have the right to work, but never to the fruit of work. You should never engage in action for the sake of reward, nor should you long for inaction.&quot;
-              <br />
-              <span className="text-white/40">— Bhagavad Gita 2.47</span>
-            </p>
-            <div className="flex items-center justify-center gap-3">
-              <Badge
-                variant="outline"
-                className="px-3 py-1 text-[10px] bg-white/5 border-white/10 text-white/60"
-              >
-                <Eye className="w-3 h-3 mr-1.5" />
-                <span>1,234 visitors</span>
-              </Badge>
-            </div>
           </div>
         </section>
 
