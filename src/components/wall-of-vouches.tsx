@@ -25,7 +25,7 @@ export function WallOfVouches({ vouches }: WallOfVouchesProps) {
     }, []);
 
     return (
-        <section className="w-full max-w-[800px] mx-auto py-12 px-6">
+        <section className="w-full max-w-[1200px] mx-auto py-12 px-6">
             <div
                 ref={containerRef}
                 className="relative min-h-[600px] w-full bg-zinc-950/15 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden"
