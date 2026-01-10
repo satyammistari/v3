@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, FileText } from "lucide-react";
 
 export const DATA = {
   name: "Satyam",
@@ -49,33 +49,30 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
+    email: "contact@satyammistari.com",
     tel: "+123456789",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/yourusername",
+        url: "https://github.com/satyammistari",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/yourusername",
+        url: "https://www.linkedin.com/in/satyam-m-a10309322",
         icon: Icons.linkedin,
-
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://x.com/yourusername",
+        url: "https://x.com/SatyamMistari14",
         icon: Icons.x,
-
         navbar: true,
       },
       Youtube: {
         name: "Youtube",
-        url: "https://youtube.com/@yourusername",
+        url: "https://www.youtube.com/@EternalAlpha-l6t",
         icon: Icons.youtube,
         navbar: true,
       },
@@ -85,12 +82,17 @@ export const DATA = {
         icon: Icons.medium,
         navbar: true,
       },
+      Resume: {
+        name: "Resume",
+        url: "/resume.pdf",
+        icon: FileText,
+        navbar: true,
+      },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:contact@satyammistari.com",
         icon: Icons.email,
-
-        navbar: false,
+        navbar: true,
       },
     },
   },
