@@ -67,6 +67,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'wbnzpajtrlgaoulcfrlv.supabase.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'huggingface.co',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.google.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.kaggle.com',
+      },
     ],
   },
 };

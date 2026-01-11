@@ -18,6 +18,7 @@ import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { SectionsWrapper } from "@/components/sections-wrapper";
 import { Badge } from "@/components/ui/badge";
+import { GitHubContributionsSection } from "@/components/github-contributions-section";
 
 export default async function Page() {
 
@@ -95,49 +96,8 @@ export default async function Page() {
           </SectionsWrapper>
         </section>
 
-        {/* Featured Open Source Work */}
-        <section id="opensource">
-          <SectionsWrapper>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6">Featured Open Source Work</h2>
-            <div className="space-y-6">
-              <ExperienceCard
-                logoUrl="https://www.kaggle.com/static/images/site-logo.png"
-                altText="Kaggle"
-                company="Kaggle"
-                title="Open Source Contributor"
-                period="2023 - Present"
-                location="Remote"
-                description="Active contributor to the Kaggle ecosystem with comprehensive tutorials and notebooks covering fine-tuning, inference optimization, and practical ML engineering. Published datasets and competition solutions helping the ML community learn and grow."
-                href="https://www.kaggle.com/satyammistari"
-                website="https://www.kaggle.com/satyammistari"
-                techStack={[
-                  { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-                  { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
-                  { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-                  { name: "scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
-                ]}
-              />
-
-              <ExperienceCard
-                logoUrl="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
-                altText="Hugging Face"
-                company="Hugging Face"
-                title="Open Source Contributor"
-                period="2023 - Present"
-                location="Remote"
-                description="Active contributor to the Hugging Face ecosystem with multiple repositories and models for NLP and multimodal AI. Published transformer models, datasets, and spaces demonstrating state-of-the-art techniques in natural language processing and computer vision."
-                href="https://huggingface.co/satyammistari"
-                website="https://huggingface.co/satyammistari"
-                techStack={[
-                  { name: "Transformers", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
-                  { name: "PyTorch", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
-                  { name: "TensorFlow", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-                  { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-                ]}
-              />
-            </div>
-          </SectionsWrapper>
-        </section>
+        {/* Featured Open Source Work - Real-Time GitHub Contributions */}
+        <GitHubContributionsSection />
 
         {/* Experience Section */}
         <section id="work">

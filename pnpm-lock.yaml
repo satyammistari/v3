@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@octokit/core':
+        specifier: ^7.0.6
+        version: 7.0.6
+      '@octokit/graphql':
+        specifier: ^9.0.3
+        version: 9.0.3
       '@octokit/rest':
         specifier: ^22.0.1
         version: 22.0.1
