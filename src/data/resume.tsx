@@ -154,6 +154,61 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "End-to-End Support Agent MLOps with ZenML",
+      href: "https://github.com/satyammistari/End-to-End-Support-Agent-MLOps-",
+      dates: "2024 - Present",
+      active: true,
+      description:
+        "Built a production-ready <strong>end-to-end MLOps pipeline</strong> for an AI-powered support agent with automated workflows for model training, deployment, monitoring, and continuous retraining.",
+      technologies: [
+        "Python",
+        "MLflow",
+        "ZenML",
+        "FastAPI",
+        "PyTorch",
+        "TensorFlow",
+        "CI/CD",
+        "Prometheus",
+        "Grafana",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/satyammistari/End-to-End-Support-Agent-MLOps-",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/zenml-support-agent.png",
+      video: "",
+    },
+    {
+      title: "Build and Deploy Text-2-SQL LLM Using OpenAI and AWS",
+      href: "https://github.com/satyammistari",
+      dates: "2024 - Present",
+      active: true,
+      description:
+        "Built a user-friendly <strong>web application that leverages Large Language Models (LLMs)</strong> to convert natural language queries into optimized SQL commands using OpenAI and AWS infrastructure.",
+      technologies: [
+        "Python",
+        "OpenAI",
+        "AWS",
+        "LangChain",
+        "FastAPI",
+        "PostgreSQL",
+        "Docker",
+        "React",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/satyammistari",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/text2sql-llm.png",
+      video: "",
+    },
+    {
       title: "llm.report",
       href: "https://llm.report",
       dates: "April 2023 - September 2023",
