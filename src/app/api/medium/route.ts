@@ -77,7 +77,7 @@ export async function GET() {
       // Look for bullet points in the content
       const bulletMatches = contentEncoded.match(/<li[^>]*>(.*?)<\/li>/gi);
       if (bulletMatches && bulletMatches.length > 0) {
-        bulletMatches.slice(0, 5).forEach((bullet) => {
+        bulletMatches.slice(0, 5).forEach((bullet: string) => {
           const cleanPoint = bullet
             .replace(/<[^>]*>/g, '')
             .replace(/&nbsp;/g, ' ')
@@ -92,7 +92,7 @@ export async function GET() {
       if (summaryPoints.length === 0) {
         const paragraphMatches = contentEncoded.match(/<p[^>]*>(.*?)<\/p>/gi);
         if (paragraphMatches && paragraphMatches.length > 1) {
-          paragraphMatches.slice(1, 4).forEach((para) => {
+          paragraphMatches.slice(1, 4).forEach((para: string) => {
             const cleanPara = para
               .replace(/<[^>]*>/g, '')
               .replace(/&nbsp;/g, ' ')
