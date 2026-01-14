@@ -16,6 +16,12 @@ export default function VouchesPage() {
 
     const fetchVouches = async () => {
         try {
+            // Only fetch if running on client side and supabase is configured
+            if (typeof window === 'undefined') {
+                setIsLoading(false);
+                return;
+            }
+
             // Fetch latest 50 vouches
             const { data, error } = await supabase
                 .from('vouches')
@@ -25,15 +31,14 @@ export default function VouchesPage() {
 
             if (error) {
                 console.error("Error fetching vouches:", error);
-            } else if (data) {
-                // Merge static and dynamic, or just rely on dynamic?
-                // Let's combine them so the static ones (your curated friends) are always there at the bottom or top.
-                // Actually, if dynamic grows, static might be noise. But for now, let's simple concat.
-                // Dynamic first (newest), then static.
+                // Keep static vouches on error
+            } else if (data && data.length > 0) {
+                // Merge dynamic and static vouches
                 setVouches([...data, ...STATIC_VOUCHES]);
             }
         } catch (err) {
             console.error("Unexpected error:", err);
+            // Keep static vouches on error
         } finally {
             setIsLoading(false);
         }
