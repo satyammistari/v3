@@ -9,6 +9,7 @@ interface MediumPost {
   slug: string;
   pubDate: string;
   description: string;
+  summaryPoints?: string[];
   image: string;
   categories: string[];
 }

@@ -99,7 +99,7 @@ export default async function BlogDetailPage({
             <p className="text-xs font-medium" style={{ fontFamily: "var(--font-geist-mono)" }}>{formattedDate}</p>
           </div>
         </div>
-        
+
         <div className="flex items-center gap-2 text-white/70">
           <Clock className="w-4 h-4" />
           <div>
@@ -127,12 +127,32 @@ export default async function BlogDetailPage({
         )}
       </div>
 
-      {/* Short Summary Content */}
-      <div className="mb-8">
-        <h2 className="text-xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>Summary</h2>
-        <p className="text-sm text-white/80 leading-relaxed whitespace-pre-line" style={{ fontFamily: "var(--font-geist-mono)" }}>
-          {post.contentSnippet}
+      {/* Blog Summary */}
+      <div className="mb-8 bg-[#0c0c0c] border border-white/10 rounded-lg p-6">
+        <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          <span className="text-cyan-500">📝</span>
+          Summary
+        </h2>
+        <p className="text-base text-white/80 leading-relaxed mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          {post.description || post.contentSnippet || "No summary available."}
         </p>
+
+        {/* Summary Points */}
+        {post.contentSnippet && typeof post.contentSnippet === 'string' && post.contentSnippet.includes('•') && (
+          <div className="mt-6 pt-4 border-t border-white/10">
+            <h3 className="text-sm font-semibold text-white/90 mb-3" style={{ fontFamily: "var(--font-geist-mono)" }}>
+              Key Points:
+            </h3>
+            <ul className="space-y-2">
+              {post.contentSnippet.split('•').filter(p => p.trim()).map((point, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-white/70" style={{ fontFamily: "var(--font-geist-mono)" }}>
+                  <span className="text-cyan-500 mt-1">•</span>
+                  <span>{point.trim()}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Read Full Article on Medium */}
@@ -144,7 +164,7 @@ export default async function BlogDetailPage({
         style={{ fontFamily: "var(--font-geist-mono)" }}
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
         </svg>
         <span>Read Full Post on Medium</span>
         <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

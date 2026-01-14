@@ -24,15 +24,8 @@ export async function GET() {
     const xmlData = await response.text();
     const result: any = await parseXML(xmlData);
 
-    // Debug log to check structure
-    // console.log("Medium API: Parsed XML structure keys:", Object.keys(result || {}));
-    if (result?.rss?.channel) {
-      // console.log("Medium API: RSS Channel keys:", Object.keys(result.rss.channel[0]));
-    }
-
     if (!result?.rss?.channel?.[0]?.item) {
       console.error('Invalid RSS structure. Result keys:', Object.keys(result || {}));
-      console.log('Full result snippet:', JSON.stringify(result).substring(0, 200));
       return NextResponse.json({ posts: [] });
     }
 
@@ -42,8 +35,35 @@ export async function GET() {
       const imageMatch = contentEncoded.match(/<img[^>]+src="([^">]+)"/);
       const image = imageMatch ? imageMatch[1] : '';
 
-      // Clean description
-      const description = item.description?.[0]?.replace(/<[^>]*>/g, '').substring(0, 150) + '...' || '';
+      // Clean description - try multiple sources
+      let description = '';
+
+      // Try description field first
+      if (item.description?.[0]) {
+        const rawDesc = item.description[0];
+        // Remove HTML tags and decode entities
+        description = rawDesc
+          .replace(/<!\[CDATA\[/g, '')
+          .replace(/\]\]>/g, '')
+          .replace(/<[^>]*>/g, '')
+          .replace(/&nbsp;/g, ' ')
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&quot;/g, '"')
+          .trim();
+      }
+
+      // Fallback to content:encoded if description is empty
+      if (!description && contentEncoded) {
+        description = contentEncoded
+          .replace(/<[^>]*>/g, '')
+          .replace(/&nbsp;/g, ' ')
+          .trim();
+      }
+
+      // Truncate and add ellipsis
+      description = description.substring(0, 200).trim() + (description.length > 200 ? '...' : '');
 
       // Generate slug from title
       const slug = item.title[0]
@@ -51,12 +71,53 @@ export async function GET() {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
 
+      // Extract summary points (bullet points or key paragraphs)
+      const summaryPoints: string[] = [];
+
+      // Look for bullet points in the content
+      const bulletMatches = contentEncoded.match(/<li[^>]*>(.*?)<\/li>/gi);
+      if (bulletMatches && bulletMatches.length > 0) {
+        bulletMatches.slice(0, 5).forEach((bullet) => {
+          const cleanPoint = bullet
+            .replace(/<[^>]*>/g, '')
+            .replace(/&nbsp;/g, ' ')
+            .trim();
+          if (cleanPoint.length > 10 && cleanPoint.length < 200) {
+            summaryPoints.push(cleanPoint);
+          }
+        });
+      }
+
+      // If no bullet points, extract first few paragraphs as key points
+      if (summaryPoints.length === 0) {
+        const paragraphMatches = contentEncoded.match(/<p[^>]*>(.*?)<\/p>/gi);
+        if (paragraphMatches && paragraphMatches.length > 1) {
+          paragraphMatches.slice(1, 4).forEach((para) => {
+            const cleanPara = para
+              .replace(/<[^>]*>/g, '')
+              .replace(/&nbsp;/g, ' ')
+              .trim();
+            if (cleanPara.length > 50 && cleanPara.length < 250) {
+              summaryPoints.push(cleanPara);
+            }
+          });
+        }
+      }
+
+      console.log('Medium Post:', {
+        title: item.title[0],
+        descLength: description.length,
+        hasDesc: !!description,
+        summaryPointsCount: summaryPoints.length
+      });
+
       return {
         title: item.title[0],
         slug,
         link: item.link[0],
         pubDate: item.pubDate[0],
         description,
+        summaryPoints,
         image,
         categories: item.category || [],
       };

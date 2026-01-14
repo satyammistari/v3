@@ -40,10 +40,10 @@ export function BlogCard({ title, description, date, image, tags, slug, readTime
 
       {/* Content */}
       <div className="p-5 flex-1 flex flex-col">
-        <h3 className="text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-white/90 transition-colors" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <h3 className="text-base font-bold text-white mb-3 line-clamp-2 group-hover:text-white/90 transition-colors" style={{ fontFamily: "var(--font-geist-mono)" }}>
           {title}
         </h3>
-        <p className="text-xs text-white/60 mb-4 line-clamp-3 flex-1 leading-relaxed" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <p className="text-sm text-white/70 mb-4 line-clamp-4 flex-1 leading-relaxed" style={{ fontFamily: "var(--font-geist-mono)" }}>
           {description}
         </p>
 
