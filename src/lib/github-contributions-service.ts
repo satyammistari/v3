@@ -112,28 +112,7 @@ function getMockContributions(): OrgContributions[] {
         {
             org: "huggingface",
             contributions: [
-                {
-                    id: "1",
-                    title: "Add support for new transformer architecture",
-                    description: "Implemented support for the latest GPT-4 architecture in the transformers library",
-                    url: "https://github.com/huggingface/transformers/pull/12345",
-                    number: 12345,
-                    type: "pr",
-                    org: "huggingface",
-                    repo: "transformers",
-                    createdAt: "2024-01-15T10:00:00Z",
-                },
-                {
-                    id: "2",
-                    title: "Fix memory leak in tokenizer",
-                    description: "Resolved memory leak issue when processing large batches",
-                    url: "https://github.com/huggingface/transformers/pull/12340",
-                    number: 12340,
-                    type: "pr",
-                    org: "huggingface",
-                    repo: "transformers",
-                    createdAt: "2024-01-10T14:30:00Z",
-                },
+        // Example placeholder contribution; replace with real data if desired
             ],
         },
         // Additional organizations can be added here with their mock contributions
