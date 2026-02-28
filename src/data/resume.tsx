@@ -49,7 +49,7 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "contact@satyammistari.com",
+    email: "mistarisatyam@gmail.com",
     tel: "+123456789",
     social: {
       GitHub: {
@@ -90,7 +90,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "mailto:contact@satyammistari.com",
+        url: "mailto:mistarisatyam@gmail.com",
         icon: Icons.email,
         navbar: true,
       },

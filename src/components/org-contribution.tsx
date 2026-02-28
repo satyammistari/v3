@@ -11,7 +11,6 @@ interface OrgContributionProps {
 
 const ORG_LOGOS: Record<string, string> = {
     huggingface: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-    "google-research": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png",
     kaggle: "https://www.kaggle.com/static/images/site-logo.svg",
 };
 
@@ -19,10 +18,6 @@ const ORG_METADATA: Record<string, { period: string; description: string }> = {
     huggingface: {
         period: "2023 - Present",
         description: "Active contributor to the Hugging Face ecosystem with multiple repositories and models for NLP and multimodal AI.",
-    },
-    "google-research": {
-        period: "2023 - Present",
-        description: "Contributing to Google Research projects focusing on ML optimization and model training pipelines.",
     },
     kaggle: {
         period: "2023 - Present",

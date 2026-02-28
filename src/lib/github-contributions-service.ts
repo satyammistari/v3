@@ -18,7 +18,7 @@ export interface OrgContributions {
 }
 
 const GITHUB_USERNAME = "satyammistari";
-const ORGANIZATIONS = ["huggingface", "google-research", "kaggle"];
+const ORGANIZATIONS = ["huggingface", "kaggle"];
 
 export async function fetchGitHubContributions(): Promise<OrgContributions[]> {
     const token = process.env.GITHUB_ACCESS_TOKEN;
@@ -136,21 +136,6 @@ function getMockContributions(): OrgContributions[] {
                 },
             ],
         },
-        {
-            org: "google-research",
-            contributions: [
-                {
-                    id: "3",
-                    title: "Optimize model training pipeline",
-                    description: "Improved training speed by 40% through better data loading",
-                    url: "https://github.com/google-research/bert/pull/455",
-                    number: 455,
-                    type: "pr",
-                    org: "google-research",
-                    repo: "bert",
-                    createdAt: "2024-01-08T09:00:00Z",
-                },
-            ],
-        },
+        // Additional organizations can be added here with their mock contributions
     ];
 }

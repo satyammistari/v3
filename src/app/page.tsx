@@ -99,65 +99,7 @@ export default async function Page() {
         {/* Featured Open Source Work - Real-Time GitHub Contributions */}
         <GitHubContributionsSection />
 
-        {/* Experience Section */}
-        <section id="work">
-          <SectionsWrapper className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Experience</h2>
-
-            {/* Current Role (First item - highlighted) */}
-            {DATA.work.length > 0 && (
-              <div className="space-y-4 pb-6 border-b border-white/10">
-                <ExperienceCard
-                  logoUrl={DATA.work[0].logoUrl}
-                  altText={DATA.work[0].company}
-                  company={DATA.work[0].company}
-                  title={DATA.work[0].title}
-                  period={`${DATA.work[0].start} - ${DATA.work[0].end ?? "Present"}`}
-                  location={DATA.work[0].location}
-                  description={DATA.work[0].description}
-                  href={DATA.work[0].href}
-                  isCurrent={!DATA.work[0].end}
-                  technologies={[
-                    "Python",
-                    "PyTorch",
-                    "TensorFlow",
-                    "scikit-learn",
-                    "OpenCV",
-                    "Pandas",
-                    "NumPy",
-                    "Hugging Face",
-                    "Keras",
-                  ]}
-                />
-              </div>
-            )}
-
-            {/* Past Experience List */}
-            <div className="space-y-6">
-              {DATA.work.slice(1).map((work) => (
-                <ExperienceCard
-                  key={work.company}
-                  logoUrl={work.logoUrl}
-                  altText={work.company}
-                  company={work.company}
-                  title={work.title}
-                  period={`${work.start} - ${work.end ?? "Present"}`}
-                  location={work.location}
-                  description={work.description}
-                  href={work.href}
-                  techStack={work.techStack ? [...work.techStack] : undefined}
-                />
-              ))}
-            </div>
-
-            {/* Show All Button */}
-            <div className="pt-4">
-              <button className="w-full bg-[#0c0c0c] border border-white/10 rounded-lg px-4 py-3 text-sm text-white/60 hover:text-white hover:bg-[#111111] transition-colors">
-                Show all work experiences
-              </button>
-            </div>
-          </SectionsWrapper>
-        </section>
+        {/* Experience Section removed as requested */}
 
         {/* Featured Projects */}
         <section id="projects">

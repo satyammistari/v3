@@ -72,7 +72,7 @@ export function HeroSection() {
             className="text-5xl md:text-6xl font-bold tracking-tighter leading-none"
           >
             Hii, I am {DATA.name} — <br />
-            <span className="text-[#888888]">ML & Robotics Developer.</span>
+            <span className="text-[#888888]">ML & MLOps Engineer.</span>
           </motion.h1>
 
           <motion.p
@@ -129,7 +129,7 @@ export function HeroSection() {
               variant="outline"
               className="border border-white/10 bg-transparent hover:bg-white/5 text-white"
             >
-              <Link href="#work">
+              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 <FileText className="w-4 h-4 mr-2" />
                 Resume / CV
               </Link>
@@ -138,7 +138,7 @@ export function HeroSection() {
               asChild
               className="bg-white text-black hover:bg-white/90 border-0"
             >
-              <Link href="#contact">
+              <Link href="mailto:mistarisatyam@gmail.com">
                 <Send className="w-4 h-4 mr-2" />
                 Get in touch
               </Link>
