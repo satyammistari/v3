@@ -36,7 +36,7 @@ export function Footer() {
       </motion.div>
 
       {/* Seamless Transition Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black via-black/40 to-transparent" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#000000] via-[#000000]/60 to-transparent" />
 
       {/* Content Layer */}
       <div className="relative z-20 flex flex-col items-center justify-end h-full w-full min-h-[500px] pb-12 text-center space-y-8">
@@ -58,7 +58,7 @@ export function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-sm text-zinc-400 hover:text-white transition-colors uppercase tracking-wider"
+                  className="font-mono text-xs text-white/40 hover:text-white/80 transition-colors uppercase tracking-widest"
                 >
                   {key}
                 </Link>

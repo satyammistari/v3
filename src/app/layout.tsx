@@ -4,14 +4,15 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { JetBrains_Mono, Newsreader } from "next/font/google";
+import { Playfair_Display, Newsreader } from "next/font/google";
 import { DogPet } from "@/components/dog-pet";
 import "./globals.css";
 
-const jetbrainsMono = JetBrains_Mono({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  variable: "--font-serif",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const newsreader = Newsreader({
@@ -63,18 +64,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${jetbrainsMono.className} ${newsreader.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfairDisplay.className} ${newsreader.variable}`}>
       <body
         className={cn(
           "min-h-screen bg-[#000000] antialiased text-sm",
-          jetbrainsMono.variable,
+          playfairDisplay.variable,
           newsreader.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           <TooltipProvider delayDuration={0}>
             <Navbar />
-            <main className="max-w-4xl mx-auto px-6 pt-16 min-h-screen bg-[#000000]">{children}</main>
+            <main className="max-w-2xl mx-auto px-6 pt-16 min-h-screen bg-[#000000]">{children}</main>
             <DogPet />
           </TooltipProvider>
         </ThemeProvider>

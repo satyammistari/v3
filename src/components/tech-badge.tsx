@@ -73,7 +73,7 @@ export function TechBadge({ name, icon }: TechBadgeProps) {
   const displayIcon = icon || techIcons[name] || null;
 
   return (
-    <div className="bg-[#161616] dark:bg-[#161616] light:bg-zinc-100 border border-white/10 dark:border-white/10 light:border-zinc-300 rounded-md px-2 py-1 flex items-center gap-1.5 hover:border-dashed hover:bg-[#1a1a1a] dark:hover:bg-[#1a1a1a] light:hover:bg-zinc-200 transition-all">
+    <div className="bg-[#161616] dark:bg-[#161616] light:bg-zinc-100 border border-dashed border-white/20 dark:border-white/20 light:border-zinc-300 rounded-md px-2 py-1 flex items-center gap-1.5 hover:bg-[#1a1a1a] dark:hover:bg-[#1a1a1a] light:hover:bg-zinc-200 transition-all">
       {displayIcon && <span className="flex-shrink-0">{displayIcon}</span>}
       <span className="text-white dark:text-white light:text-zinc-900 uppercase text-[9px] font-medium tracking-tight">{name.toUpperCase()}</span>
     </div>

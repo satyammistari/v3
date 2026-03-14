@@ -40,7 +40,7 @@ export function EnhancedWorkCard({
   return (
     <div className="bg-[#0c0c0c] rounded-lg border border-white/10 p-4 hover:bg-[#111111] transition-all">
       <div className="flex items-start space-x-4">
-        <Avatar className="size-12 border border-white/10">
+        <Avatar className="size-8 border border-white/10">
           <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
           <AvatarFallback className="bg-white/5 text-white/60">
             {altText[0]}
@@ -89,9 +89,8 @@ export function EnhancedWorkCard({
                       className="text-white/40 hover:text-white/80 transition-colors"
                     >
                       <ChevronDown
-                        className={`w-4 h-4 transition-transform ${
-                          isExpanded ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                   )}

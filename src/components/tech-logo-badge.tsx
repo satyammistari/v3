@@ -8,9 +8,9 @@ interface TechLogoBadgeProps {
 
 export function TechLogoBadge({ name, logo, size = "sm" }: TechLogoBadgeProps) {
   const sizeClasses = {
-    sm: "w-6 h-6",
-    md: "w-8 h-8",
-    lg: "w-10 h-10",
+    sm: "w-4 h-4",
+    md: "w-6 h-6",
+    lg: "w-8 h-8",
   };
 
   return (
@@ -19,8 +19,8 @@ export function TechLogoBadge({ name, logo, size = "sm" }: TechLogoBadgeProps) {
         <Image
           src={logo}
           alt={name}
-          width={size === "sm" ? 24 : size === "md" ? 32 : 40}
-          height={size === "sm" ? 24 : size === "md" ? 32 : 40}
+          width={size === "sm" ? 16 : size === "md" ? 24 : 32}
+          height={size === "sm" ? 16 : size === "md" ? 24 : 32}
           className="object-contain group-hover:scale-110 transition-transform duration-300"
         />
       </div>

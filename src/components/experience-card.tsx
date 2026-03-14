@@ -54,13 +54,13 @@ export function ExperienceCard({
       {/* Header Row */}
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start space-x-3 flex-1 min-w-0">
-          <Avatar className="size-10 border border-white/10 flex-shrink-0">
+          <Avatar className="size-7 border border-white/10 flex-shrink-0">
             <AvatarImage src={logoUrl} alt={altText} className="object-contain" />
             <AvatarFallback className="bg-white/5 text-white/60">
               {altText[0]}
             </AvatarFallback>
           </Avatar>
-          
+
           <div className="flex-1 min-w-0">
             <div className="flex items-center flex-wrap gap-2 mb-1">
               <span className="text-sm text-white/60 blur-sm">{company}</span>
@@ -172,30 +172,29 @@ export function ExperienceCard({
             className="flex items-center space-x-2 text-white/60 hover:text-white/80 transition-colors"
           >
             <ChevronDown
-              className={`w-4 h-4 transition-transform ${
-                isExpanded ? "rotate-180" : ""
-              }`}
+              className={`w-4 h-4 transition-transform ${isExpanded ? "rotate-180" : ""
+                }`}
             />
             <span className="text-sm">View details</span>
           </button>
-            <motion.div
-              initial={false}
-              animate={{
-                height: isExpanded ? "auto" : 0,
-                opacity: isExpanded ? 1 : 0,
-              }}
-              transition={{ duration: 0.3 }}
-              className="overflow-hidden"
-            >
-              <div className="text-sm text-zinc-400 leading-relaxed space-y-2 pl-4">
-                {description.split(". ").filter(p => p.trim()).map((point, idx) => (
-                  <div key={idx} className="flex items-start">
-                    <span className="mr-2 text-white/60">•</span>
-                    <span>{point.trim().replace(/\.$/, "")}.</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+          <motion.div
+            initial={false}
+            animate={{
+              height: isExpanded ? "auto" : 0,
+              opacity: isExpanded ? 1 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="text-sm text-zinc-400 leading-relaxed space-y-2 pl-4">
+              {description.split(". ").filter(p => p.trim()).map((point, idx) => (
+                <div key={idx} className="flex items-start">
+                  <span className="mr-2 text-white/60">•</span>
+                  <span>{point.trim().replace(/\.$/, "")}.</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </>
       )}
     </div>

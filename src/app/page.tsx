@@ -24,14 +24,16 @@ export default async function Page() {
 
   return (
     <div className="min-h-screen bg-[#000000] text-white">
-      <div className="w-full mx-auto py-12 space-y-16">
+      <div className="w-full mx-auto py-12 space-y-12">
         {/* Hero Section */}
         <HeroSection />
 
         {/* Categorized Skills */}
         <section id="skills">
           <SectionsWrapper>
-            <h2 className="text-3xl font-bold tracking-tight mb-6">Technical Skills</h2>
+            <div className="border-b border-white/10 pb-2 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight section-hash">Skills</h2>
+            </div>
             <CategorizedSkills />
           </SectionsWrapper>
         </section>
@@ -39,7 +41,9 @@ export default async function Page() {
         {/* Academic Publications */}
         <section id="publications">
           <SectionsWrapper>
-            <h2 className="text-3xl font-bold tracking-tight mb-6">Academic Publications</h2>
+            <div className="border-b border-white/10 pb-2 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight section-hash">Publications</h2>
+            </div>
             <div className="space-y-4">
               <PublicationCard
                 title="Multi-agent LLM Orchestration"
@@ -68,7 +72,9 @@ export default async function Page() {
         {/* Research Projects */}
         <section id="research">
           <SectionsWrapper>
-            <h2 className="text-3xl font-bold tracking-tight mb-6">Research Projects</h2>
+            <div className="border-b border-white/10 pb-2 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight section-hash">Research</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <ResearchProjectCard
                 title="Multi-agent LLM Orchestration"
@@ -103,8 +109,10 @@ export default async function Page() {
 
         {/* Featured Projects */}
         <section id="projects">
-          <SectionsWrapper className="space-y-8">
-            <h2 className="text-3xl font-semibold tracking-tight">Featured Projects</h2>
+          <SectionsWrapper className="space-y-6">
+            <div className="border-b border-white/10 pb-2 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight section-hash">Projects</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {DATA.projects.slice(0, 4).map((project) => {
                 const slug = project.title.toLowerCase().replace(/\s+/g, "-");
@@ -132,8 +140,10 @@ export default async function Page() {
 
         {/* Featured Blogs */}
         <section id="blogs">
-          <SectionsWrapper className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Featured Blogs</h2>
+          <SectionsWrapper className="space-y-6">
+            <div className="border-b border-white/10 pb-2 mb-6">
+              <h2 className="text-2xl font-bold tracking-tight section-hash">Blogs</h2>
+            </div>
             <MediumBlogCard />
             <div className="flex justify-center pt-4">
               <a
@@ -151,11 +161,10 @@ export default async function Page() {
         {/* Bento Grid - Setup & Life */}
         <section id="setup-life">
           <div className="space-y-12">
-            {/* Development Section */}
+            {/* Setup & Life */}
             <SectionsWrapper className="space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Development</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Setup</h2>
+              <div className="border-b border-white/10 pb-2 mb-6">
+                <h2 className="text-2xl font-bold tracking-tight section-hash">Setup</h2>
               </div>
               <div className="space-y-3">
                 <BentoCard
@@ -173,9 +182,8 @@ export default async function Page() {
 
             {/* Personal Section */}
             <SectionsWrapper className="space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm text-white/60 uppercase tracking-wider">Personal</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Life</h2>
+              <div className="border-b border-white/10 pb-2 mb-6">
+                <h2 className="text-2xl font-bold tracking-tight section-hash">Life</h2>
               </div>
               <div className="space-y-3">
                 <BentoCard
