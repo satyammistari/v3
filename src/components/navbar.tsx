@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link href="/" className={linkClass(pathname === "/")}>
               home
             </Link>
-            <Link href="/#projects" className={linkClass(false)}>
+            <Link href="/projects" className={linkClass(pathname === "/projects")}>
               projects
             </Link>
             <Link href="/blog" className={linkClass(pathname === "/blog")}>

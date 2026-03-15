@@ -75,7 +75,7 @@ export default async function Page() {
             <div className="border-b border-white/10 pb-2 mb-6">
               <h2 className="text-2xl font-bold tracking-tight section-hash">Research</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <ResearchProjectCard
                 title="Multi-agent LLM Orchestration"
                 description="A system integrating textual and visual information to enhance contextual precision in agent-based workflows."

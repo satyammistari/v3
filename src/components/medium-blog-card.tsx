@@ -53,7 +53,7 @@ export function MediumBlogCard() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 gap-6">
       {posts.slice(0, 4).map((post) => (
         <BlogCard
           key={post.link}

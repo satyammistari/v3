@@ -1,6 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, FileText } from "lucide-react";
-
+import { HomeIcon, NotebookIcon, FileText, FolderGit2 } from "lucide-react";
 export const DATA = {
   name: "Satyam",
   initials: "ST",
@@ -47,6 +46,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/projects", icon: FolderGit2, label: "Projects" },
   ],
   contact: {
     email: "mistarisatyam@gmail.com",
@@ -208,39 +208,7 @@ export const DATA = {
       image: "/text2sql-llm.png",
       video: "",
     },
-    {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
-      active: true,
-      description:
-        "Developed an <strong>open-source logging and analytics platform</strong> for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
-    },
+
   ],
   hackathons: [
     {

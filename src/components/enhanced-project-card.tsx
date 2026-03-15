@@ -32,60 +32,60 @@ export function EnhancedProjectCard({
   links,
 }: EnhancedProjectCardProps) {
   return (
-    <div className="bg-[#0c0c0c] dark:bg-[#0c0c0c] light:bg-white rounded-lg border border-white/10 dark:border-white/10 light:border-zinc-200 overflow-hidden hover:bg-[#111111] dark:hover:bg-[#111111] light:hover:shadow-lg transition-all group h-full flex flex-col">
-      {/* Gradient Header Image */}
-      <div className="relative h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 dark:from-purple-500/20 dark:to-blue-500/20 light:from-purple-500/10 light:to-blue-500/10 overflow-hidden group/image">
-        {video ? (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500"
-          />
-        ) : image ? (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover group-hover/image:scale-105 transition-transform duration-500"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="text-6xl opacity-20">🚀</div>
+    <div className="bg-zinc-950 rounded-2xl border border-white/10 overflow-hidden hover:bg-zinc-900 transition-all duration-300 group h-full flex flex-col shadow-xl hover:shadow-2xl hover:border-white/20 relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      <div className="p-6 flex-1 flex flex-col relative z-10">
+        <div className="flex flex-row items-center gap-4 mb-5">
+          <div className="relative w-14 h-14 rounded-xl flex-shrink-0 overflow-hidden bg-white/5 border border-white/10 shadow-inner group-hover:scale-105 transition-transform duration-300">
+            {video ? (
+              <video
+                src={video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            ) : image ? (
+              <Image
+                src={image}
+                alt={title}
+                fill
+                className="object-cover"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-2xl">🚀</span>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-6 flex-1 flex flex-col">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-semibold text-white dark:text-white light:text-zinc-900 group-hover:text-white/90 dark:group-hover:text-white/90 light:group-hover:text-zinc-700 transition-colors">
-            {title}
-          </h3>
-          <div className="flex items-center space-x-2">
-            {links?.map((link, idx) => (
-              <Link
-                key={idx}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 dark:text-white/60 light:text-zinc-500 hover:text-white dark:hover:text-white light:hover:text-zinc-900 transition-colors"
-              >
-                {link.icon}
-              </Link>
-            ))}
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-semibold text-white tracking-tight truncate group-hover:text-blue-400 transition-colors">
+              {title}
+            </h3>
+            <div className="flex items-center space-x-3 mt-1.5">
+              {links?.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-500 hover:text-white transition-colors"
+                >
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        <p className="text-sm text-white/60 dark:text-white/60 light:text-zinc-600 mb-4 line-clamp-2 flex-1 leading-relaxed">
-          {description}
-        </p>
+        <div className="text-sm text-zinc-400 mb-6 flex-1 leading-relaxed">
+          <span dangerouslySetInnerHTML={{ __html: description }} />
+        </div>
 
         {/* Technologies */}
-        <div className="mb-4">
-          <p className="text-xs text-white/50 dark:text-white/50 light:text-zinc-500 mb-2">Technologies</p>
+        <div className="mb-6">
           <div className="flex flex-wrap gap-2">
             {technologies.slice(0, 6).map((tech) => (
               <TechBadge key={tech} name={tech} />
@@ -94,20 +94,23 @@ export function EnhancedProjectCard({
         </div>
 
         {/* Status & View Details */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/10 dark:border-white/10 light:border-zinc-200">
-          <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-green-400 dark:text-green-400 light:text-green-600" />
-            <span className="text-xs text-white/60 dark:text-white/60 light:text-zinc-500">
-              All Systems Operational
+        <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-xs font-medium text-emerald-500/90 tracking-wide">
+              Operational
             </span>
           </div>
           {href && (
             <Link
               href={href}
-              className="flex items-center space-x-1 text-sm text-white/60 dark:text-white/60 light:text-zinc-600 hover:text-white dark:hover:text-white light:hover:text-zinc-900 transition-colors group/link"
+              className="group/btn flex items-center space-x-1 text-xs font-medium text-zinc-400 hover:text-white transition-colors"
             >
-              <span>View Details</span>
-              <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+              <span>View Project</span>
+              <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 group-hover/btn:text-blue-400 transition-all" />
             </Link>
           )}
         </div>
@@ -115,4 +118,3 @@ export function EnhancedProjectCard({
     </div>
   );
 }
-
