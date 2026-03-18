@@ -77,12 +77,12 @@ export function CategorizedSkills() {
             key={skill.name}
             className="flex flex-col items-center gap-3 p-4 bg-[#0a0a0a] border border-white/10 rounded-lg hover:border-white/30 transition-all group"
           >
-            <div className="w-12 h-12 relative flex items-center justify-center">
+            <div className="w-8 h-8 relative flex items-center justify-center">
               <Image
                 src={skill.logo}
                 alt={skill.name}
-                width={48}
-                height={48}
+                width={32}
+                height={32}
                 className="object-contain"
               />
             </div>

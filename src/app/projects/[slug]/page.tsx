@@ -69,7 +69,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   const technologies = [repo.language, ...(repo.topics || [])].filter(Boolean);
 
   return (
-    <div className="min-h-screen bg-[#000000] text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-12 space-y-12">
         {/* Header Section with Hero Placeholder */}

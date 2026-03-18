@@ -72,10 +72,10 @@ export default function RootLayout({
           newsreader.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           <TooltipProvider delayDuration={0}>
             <Navbar />
-            <main className="max-w-2xl mx-auto px-6 pt-16 min-h-screen bg-[#000000]">{children}</main>
+            <main className="max-w-2xl mx-auto px-6 pt-16 min-h-screen">{children}</main>
             <DogPet />
           </TooltipProvider>
         </ThemeProvider>

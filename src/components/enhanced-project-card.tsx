@@ -6,6 +6,33 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+const LANG_ICONS: Record<string, string> = {
+  Python: "🐍",
+  TypeScript: "📘",
+  JavaScript: "🟨",
+  Rust: "🦀",
+  Go: "🐹",
+  "C++": "⚙️",
+  C: "🔧",
+  Java: "☕",
+  HTML: "🌐",
+  CSS: "🎨",
+  Shell: "🐚",
+  Ruby: "💎",
+  MLOps: "🤖",
+  SQL: "🗄️",
+  LLM: "🧠",
+  AWS: "☁️",
+  Docker: "🐳",
+};
+
+function getProjectEmoji(technologies: string[]): string {
+  for (const tech of technologies) {
+    if (LANG_ICONS[tech]) return LANG_ICONS[tech];
+  }
+  return "🚀";
+}
+
 interface EnhancedProjectCardProps {
   title: string;
   description: string;
@@ -55,8 +82,8 @@ export function EnhancedProjectCard({
                 className="object-cover"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center">
-                <span className="text-2xl">🚀</span>
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent">
+                <span className="text-2xl drop-shadow-sm">{getProjectEmoji(technologies)}</span>
               </div>
             )}
           </div>
@@ -101,7 +128,7 @@ export function EnhancedProjectCard({
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-xs font-medium text-emerald-500/90 tracking-wide">
-              Operational
+              Live
             </span>
           </div>
           {href && (

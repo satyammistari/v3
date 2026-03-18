@@ -23,7 +23,7 @@ import { GitHubContributionsSection } from "@/components/github-contributions-se
 export default async function Page() {
 
   return (
-    <div className="min-h-screen bg-[#000000] text-white">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="w-full mx-auto py-12 space-y-12">
         {/* Hero Section */}
         <HeroSection />
@@ -46,24 +46,15 @@ export default async function Page() {
             </div>
             <div className="space-y-4">
               <PublicationCard
-                title="Multi-agent LLM Orchestration"
+                title="Recursive Episodic Memory (REM)"
                 venue=""
                 year="2023"
-                status="Ongoing"
-                tags={["LLM", "Multi-Agent", "Vision-Language"]}
+                status="Publish Soon"
+                tags={["Long-term Memory", "Recursive Retrieval", "Episodic Memory"]}
                 paperUrl="https://arxiv.org"
                 arxivUrl="https://arxiv.org"
                 codeUrl="https://github.com"
-              />
-              <PublicationCard
-                title="Firewall for LLMs"
-                venue=""
-                year="2024"
-                status="Ongoing"
-                tags={["LLM Security", "Safety", "Guardrails"]}
-                paperUrl="https://arxiv.org"
-                arxivUrl="https://arxiv.org"
-                codeUrl="https://github.com"
+                details="REM (Recursive Episodic Memory) is a novel architecture for autonomous agents that recursively stores and retrieves episodic experiences. By organizing memories into a hierarchical structure, REM enables agents to handle long-term dependencies and maintain coherence over extended task horizons, overcoming the limitations of fixed-length context windows in large language models."
               />
             </div>
           </SectionsWrapper>
@@ -77,12 +68,14 @@ export default async function Page() {
             </div>
             <div className="grid grid-cols-1 gap-4">
               <ResearchProjectCard
-                title="Multi-agent LLM Orchestration"
-                description="A system integrating textual and visual information to enhance contextual precision in agent-based workflows."
-                metric="60% improvement in contextual precision"
-                tags={["LLM", "Multi-Agent", "Vision-Language"]}
+                title="Recursive Episodic Memory (REM)"
+                description="Long-term memory for autonomous agents using recursive retrieval."
+                metric="Significant improvement in long-term coherence"
+                tags={["Long-term Memory", "Recursive Retrieval", "Episodic Memory"]}
                 demoUrl="https://demo.com"
                 codeUrl="https://github.com"
+                status="Publish Soon"
+                details="REM utilizes a recursive tree structure to index episodic experiences, allowing for constant-time complexity retrieval of relevant memories. This research focus on optimizing retrieval precision and efficiency in multi-agent environments where agents must coordinate over days or weeks of simulated time."
               />
               <ResearchProjectCard
                 title="Test-Time Compute for Code Generation"
@@ -90,6 +83,7 @@ export default async function Page() {
                 novelty="Critic-Actor Loop"
                 tags={["Code Generation", "Tree of Thoughts", "Reasoning"]}
                 codeUrl="https://github.com"
+                status="Publish Soon"
               />
               <ResearchProjectCard
                 title="Quadruped (Spot Robot) Moon Surface Simulation"
@@ -97,6 +91,7 @@ export default async function Page() {
                 metric="Real-time physics simulation"
                 tags={["Robotics", "NVIDIA Isaac Sim", "ROS", "Simulation"]}
                 codeUrl="https://github.com"
+                status="Publish Soon"
               />
             </div>
           </SectionsWrapper>
@@ -115,14 +110,17 @@ export default async function Page() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {DATA.projects.slice(0, 4).map((project) => {
-                const slug = project.title.toLowerCase().replace(/\s+/g, "-");
+                // Use the first link's href (GitHub URL) as the project href to avoid 404s
+                const projectHref = project.links && project.links.length > 0
+                  ? project.links[0].href
+                  : undefined;
                 return (
                   <EnhancedProjectCard
                     key={project.title}
                     title={project.title}
                     description={project.description}
                     technologies={[...project.technologies]}
-                    href={`/projects/${slug}`}
+                    href={projectHref}
                     image={project.image}
                     video={project.video}
                     links={project.links ? [...project.links] : undefined}
