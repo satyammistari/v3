@@ -274,7 +274,7 @@ export default function HiPage() {
       {/* Footer */}
       <BlurFade delay={BLUR_FADE_DELAY * 6}>
         <div className="text-center pt-8 border-t border-white/5">
-          <p className="text-xs text-white/30 italic mb-4">"curiosity drives purpose"</p>
+          <p className="text-xs text-white/30 italic mb-4">&ldquo;curiosity drives purpose&rdquo;</p>
           <div className="flex flex-col gap-2 text-sm">
             <Link href="/" className="text-white/50 hover:text-white/90 transition-colors">Explore the full experience</Link>
           </div>

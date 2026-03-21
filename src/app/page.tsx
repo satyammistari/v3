@@ -181,7 +181,7 @@ export default async function Page() {
               {/* Thoughts Card */}
               <div className="rounded-xl border border-rose-500/20 bg-[#0a0a0a] p-6 overflow-hidden">
                 <div className="text-xs font-mono tracking-widest text-rose-400/60 uppercase mb-4">
-                  // Thoughts
+                  {'// Thoughts'}
                 </div>
                 <p className="text-sm text-white/70 leading-relaxed mb-4" style={{ fontFamily: "var(--font-serif), Georgia, serif" }}>
                   Test-time compute is underexplored for code generation. Giving models a verification loop changes the game.
