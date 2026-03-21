@@ -42,6 +42,9 @@ export default function Navbar() {
             <Link href="/blog" className={linkClass(pathname === "/blog")}>
               blogs
             </Link>
+            <Link href="/about" className={linkClass(pathname === "/about")}>
+              about
+            </Link>
           </div>
 
           {/* Right: Theme toggle */}
